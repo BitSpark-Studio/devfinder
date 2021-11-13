@@ -22,14 +22,14 @@ export default function ProfileInfo() {
         <div className="flex justify-between nameAndDate">
           <div className="grid grid-cols-1 grid-rows-1 name">
             <h1 className="nameHeader">{!userData.name ? "Your Name" : userData.name}</h1>
-            <span className="username">@{!userData.username ? "@username" : userData.username}</span>
+            <span className="username">@{!userData.username ? "username" : userData.username}</span>
           </div>
           <div>
             <p className="joiningDate mt-2">{!userData.joined_date ? "Joined Date" : userData.setJoinedDate(userData.joined_date)}</p>
           </div>
         </div>
-        <div className="bio">{!userData.bio ? "There is no bio." : userData.bio}</div>
-        <div className="grid grid-cols-3 grid-row-2 repoFollowerFollowing">
+        <div className="flex flex-1 bio">{!userData.bio ? "There is no bio." : userData.bio}</div>
+        <div className="grid grid-cols-3 grid-row-2 repoFollowerFollowing p-30">
           <div className="repo">Repos</div>
           <div className="followers">Followers</div>
           <div className="following">Following</div>
