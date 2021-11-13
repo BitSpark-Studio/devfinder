@@ -1,0 +1,14 @@
+.headerbody{
+    padding: 3px;
+    /* margin-bottom: 10px; */
+}
+.title{
+    font-size: 26px;
+}
+.themename{
+    padding-bottom: 3px;
+    font-size: 1.2rem;
+}
+.moon{
+    margin-left: 15px;
+}
