@@ -24,7 +24,20 @@ export default function SearchBox() {
   const { userData, setUserData } = useProfieInfo();
 
   const usernameref = useRef();
-
+  const months = {
+    "01": "Jan",
+    "02": "Feb",
+    "03": "Mar",
+    "04": "Apr",
+    "05": "May",
+    "06": "Jun",
+    "07": "Jul",
+    "08": "Aug",
+    "09": "Sep",
+    "10": "Oct",
+    "11": "Nov",
+    "12": "Dec",
+  };
   const oktokit = new Octokit({
     auth: process.env.REACT_APP_GITHUB_TOKEN,
   });
@@ -40,7 +53,7 @@ export default function SearchBox() {
         const userObj = {
           name: response.data.name,
           avatar: response.data.avatar_url,
-          username: response.data.username,
+          username: response.data.login,
           bio: response.data.bio,
           repos: response.data.public_repos,
           followers: response.data.followers,
@@ -49,6 +62,12 @@ export default function SearchBox() {
           website: response.data.html_url,
           twitter: response.data.twitter_username,
           joined_date: response.data.created_at,
+          setJoinedDate: function(input) {
+            const splitString = input.split('T')[0].split('-');
+            const date = `Joined ${splitString[2]} ${months[splitString[1]]} ${splitString[0]}`;
+            // this.joined_date = date;
+            return date;
+          }
         };
         setUserData(userObj);
       })
@@ -76,7 +95,6 @@ export default function SearchBox() {
           Search
         </button>
       </div>
-      {userData.website}
     </div>
   );
 }

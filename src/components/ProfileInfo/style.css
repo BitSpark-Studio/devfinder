@@ -1,7 +1,16 @@
 .profileInfo{
-    background: #FFFFFF;
+    background-color: #FFFFFF;
+    padding: 35px;
+    border-radius: 15px;
 }
 .profilePicture{
     width: 117px;
     height: 117px;
+}
+.avater{
+    border-radius: 50px;
+}
+.nameHeader{
+    font-size: 1.625rem;
+    font-weight: bold;
 }
